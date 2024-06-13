@@ -37,7 +37,7 @@ section {
     padding: 2rem 1rem;
     background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for readability */
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -67,6 +67,7 @@ iframe {
 
 .project, .experience, .skills, .interests {
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .skills ul, .interests ul {
@@ -117,9 +118,9 @@ iframe {
 }
 
 .divider {
-    width: 1%; /* Set the divider's width to 4% of the container's width */
+    width: 0.01%; /* Set the divider's width to 4% of the container's width */
     background-color: #FFFF;
-    height: 2px; /* Set the height of the divider */
+    height: 345px; /* Set the height of the divider */
     margin-top: 20px; /* Add some margin to the top */
 }
 
