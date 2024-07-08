@@ -5,18 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timo Srinarmwong Portfolio</title>
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PH5J5L8');
-    </script>
-    <!-- End Google Tag Manager -->
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -46,12 +37,67 @@
         </section>
         <section id="featured-project">
             <h2>Featured Project: Ecocery</h2>
-            <img src="images/Ecocery.png" alt="Ecocery Project">
+            <img src="/images/Ecocery.png" alt="Ecocery Project">
+            <div class="project-container">
+                <div class="project-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="project-carousel">
+                    <!-- Slider main container -->
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="/images/Ecocery1.png" alt="Ecocery Slide 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/Ecocery2.png" alt="Ecocery Slide 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/Ecocery3.png" alt="Ecocery Slide 3">
+                            </div>
+                            <!-- Add as many slides as needed -->
+                        </div>
+                        <!-- If you want pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- If you want navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
             <p>One-stop solution to responsible grocery shopping.</p>
         </section>
         <section id="projects">
             <h2>Other Projects</h2>
-            <!-- Thumbnails for other projects -->
+            <!-- Slider main container -->
+            <div class="swiper-container projects-swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="/images/project1.png" alt="Project 1">
+                        <p>Project 1 Description</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/project2.png" alt="Project 2">
+                        <p>Project 2 Description</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="/images/project3.png" alt="Project 3">
+                        <p>Project 3 Description</p>
+                    </div>
+                    <!-- Add as many slides as needed -->
+                </div>
+                <!-- If you want pagination -->
+                <div class="swiper-pagination projects-pagination"></div>
+                <!-- If you want navigation buttons -->
+                <div class="swiper-button-prev projects-button-prev"></div>
+                <div class="swiper-button-next projects-button-next"></div>
+            </div>
         </section>
         <section id="experience">
             <h2>Experience</h2>
@@ -69,7 +115,7 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

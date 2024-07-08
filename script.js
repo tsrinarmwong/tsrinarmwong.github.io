@@ -1,7 +1,10 @@
-// script.js
-var swiper = new Swiper('.swiper-container', {
+var featuredProjectSwiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 10,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
