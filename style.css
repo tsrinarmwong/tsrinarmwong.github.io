@@ -215,9 +215,27 @@ footer p {
 @media (max-width: 768px) {
     header {
         background-color: #ffffff;
-        padding: 5px 0;
+        padding: 20px 0;
         border-bottom: 1px solid #eaeaea;
     }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    nav a {
+        color: #333;
+        text-decoration: none;
+        padding: 2.5px 5px;
+    }
+    
+    nav a:hover {
+        background-color: #eaeaea;
+        border-radius: 5px;
+    }
+    
     
     .hero-content h1 {
         font-size: 2em;
