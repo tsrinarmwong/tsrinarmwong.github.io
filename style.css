@@ -77,31 +77,20 @@ nav a:hover {
 
 /* Featured project section */
 #featured-project {
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
 }
 
 #featured-project h2 {
-    color: #2e7d32;
-    margin-bottom: 20px;
-}
-
-.project-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.project-video {
-    flex: 1 1 100%;
+  color: #2e7d32;
+  margin-bottom: 20px;
 }
 
 #featured-project img {
-    max-width: 75%;
-    height: auto;
-    margin-bottom: 10px;
+  max-width: 80%; /* Adjust the width percentage to make it larger */
+  height: auto;
+  margin-bottom: 10px;
 }
 
 /* Other projects section */
@@ -237,6 +226,11 @@ footer p {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
+    
+    #featured-project img {
+      max-width: 100%; /* Increase the max-width for mobile screens */
+    }
+    
 
     .project-container {
         flex-direction: column;
