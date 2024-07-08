@@ -1,16 +1,15 @@
-var featuredProjectSwiper = new Swiper('.swiper-container', {
+// script.js
+
+// Initialize Swiper for the other projects carousel
+var projectsSwiper = new Swiper('.projects-swiper', {
     slidesPerView: 1,
     spaceBetween: 10,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: false,
-    },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.projects-button-next',
+      prevEl: '.projects-button-prev',
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.projects-pagination',
       clickable: true,
     },
     breakpoints: {

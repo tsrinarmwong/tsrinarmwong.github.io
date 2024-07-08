@@ -92,11 +92,19 @@ body {
   }
   
   .project-video {
-    flex: 1 1 45%;
+    flex: 1 1 100%;
   }
   
-  .project-carousel {
-    flex: 1 1 45%;
+  /* Other projects section */
+  #projects {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  #projects h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
   }
   
   .swiper-container {
@@ -124,17 +132,5 @@ body {
   .swiper-slide p {
     font-size: 1em;
     color: #555;
-  }
-  
-  /* Other projects section */
-  #projects {
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
-  }
-  
-  #projects h2 {
-    color: #2e7d32;
-    margin-bottom: 20px;
   }
   
