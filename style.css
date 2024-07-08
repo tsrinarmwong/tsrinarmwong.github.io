@@ -213,6 +213,12 @@ footer p {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
+    header {
+        background-color: #ffffff;
+        padding: 5px 0;
+        border-bottom: 1px solid #eaeaea;
+    }
+    
     .hero-content h1 {
         font-size: 2em;
     }
@@ -228,7 +234,7 @@ footer p {
     }
     
     #featured-project img {
-      max-width: 200%; /* Increase the max-width for mobile screens */
+      max-width: 100%; /* Increase the max-width for mobile screens */
     }
     
 
@@ -259,9 +265,9 @@ footer p {
     }
 
     .experience-image {
-        width: 50px;
+        width: 30px;
         /* Maintain fixed size */
-        height: 50px;
+        height: 30px;
         /* Maintain fixed size */
         margin: 0 0 10px 0;
     }
