@@ -1,144 +1,95 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* styles.css */
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+    margin: 0;
+    padding: 0;
     color: #333;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
+  }
+  
+  header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  nav {
     display: flex;
     justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #333;
     text-decoration: none;
-}
-
-section {
-    padding: 2rem 1rem;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for readability */
-    margin: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#intro .intro-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-}
-
-#intro img {
-    border-radius: 50%;
-    width: 150px;
-    margin-right: 1rem;
-}
-
-.video-container {
-    display: flex;
-    justify-content: center;
-}
-
-iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 315px;
-}
-
-.project, .experience, .skills, .interests {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.skills ul, .interests ul {
-    list-style: none;
-}
-
-.skills ul li, .interests ul li {
-    margin-bottom: 0.5rem;
-}
-
-.container {
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.left-section, .right-section {
-    flex: 1;
-    padding: 20px;
-    position: relative; /* Add relative positioning */
-    overflow: hidden; /* Hide overflow content */
-}
-
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease; /* Smooth transition */
-}
-
-.project-overlay p {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.left-section:hover .project-overlay {
-    transform: translateX(-100%); /* Move to the left on hover */
-}
-
-.right-section:hover .project-overlay {
-    transform: translateX(100%); /* Move to the right on hover */
-}
-
-.divider {
-    width: 0.01%; /* Set the divider's width to 4% of the container's width */
-    background-color: #FFFF;
-    height: 345px; /* Set the height of the divider */
-    margin-top: 20px; /* Add some margin to the top */
-}
-
-footer {
-    background: #333;
+    padding: 10px 20px;
+  }
+  
+  nav a:hover {
+    background-color: #eaeaea;
+    border-radius: 5px;
+  }
+  
+  .hero {
+    background: url('/images/IMG_8715.JPG') center/cover no-repeat;
     color: #fff;
-    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #intro .intro-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    #intro img {
-        margin-bottom: 1rem;
-    }
-}
+    position: relative;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 128, 0, 0.5); /* Green overlay */
+  }
+  
+  .hero-content {
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5em; /* Adjust font size as needed */
+    margin: 0;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em; /* Adjust font size as needed */
+  }
+  
+  .hero-content .cta {
+    background-color: #2e7d32;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .hero-content .cta:hover {
+    background-color: #256b28;
+  }
+  
+  section {
+    padding: 6px 20px;
+  }
+  
+  h2 {
+    color: #2e7d32;
+  }
+  
+  #featured-project img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eaeaea;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  

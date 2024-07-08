@@ -1,157 +1,72 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timo Srinarmwong - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Timo Srinarmwong Portfolio</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PH5J5L8');
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PH5J5L8" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header>
         <nav>
-            <ul>
-                <li><a href="#demo">Watch My Demo</a></li>
-                <li><a href="#experiences">Experience</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="resume.pdf" target="resume/resumeSE.pdf">Download CV</a></li>
-            </ul>
+            <a href="#home">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section id="intro">
-        <div class="intro-content">
-            <img src="images/profile.jpeg" alt="Timo Srinarmwong">
-            <div>
+    <main id="home">
+        <section class="hero">
+            <div class="hero-content">
                 <h1>Timo Srinarmwong</h1>
-                <p>Data Engineer | Data Analyst | Solution Engineer</p>
-                <p>Phone: (312)-631-5763<br>Email: tsrinarmwong.careers@gmail.com<br>Location: Chicago, IL, 60616</p>
-                <p>I am a passionate and dedicated professional with experience in data engineering, data analysis, and
-                    solutions engineering. With a strong technical background and a knack for problem-solving, I excel
-                    in delivering high-quality solutions that drive business success.</p>
+                <p>Turning complex problems into innovative solutions.</p>
+                <p><a href="#experience" class="cta">Learn more about my experience</a></p>
             </div>
-        </div>
-    </section>
-    <section id="demo">
-        <h2>Secure Query API for Data Analysis</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/JSLzuZdjZ3U" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section id="experiences">
-        <h2>Experiences</h2>
-        <div class="project">
-            <h3>Website Developer</h3>            
-            <p> One City Music Chicago - Free music education for youth by VanderCook College of Music</p>
-            <a href="https://www.onecitymusicchicago.org/">Visit the website</a>
-        </div>
-
-        <div class="project">
-            <h3>Data Engineer</h3>        
-            <p>Migrate data to Google Cloud Platform with ETL data pipeline, Design Dashboards. Increase 78% retention
-                with RFM.</p>
-            <a href="https://klangone.com/"> Company: Klang One (Retail Enabler)</a>
-        </div>
-        <div class="project">
-            <h3>Data Analyst</h3>        
-            <p>Pitched POCs to major clients. Create contents about data, raising awareness.</p>
-            <a href="https://www.tangerine.co.th/en/"> Company: Tangerine (Google Partner IT consultant)</a>
-        </div>
-    </section>
-    <section id="project">
-        <h2>Projects</h2>
-        <div class="container">
-            <section class="left-section section">
-                <div class="project-overlay">
-                    <p>Coding</p>
-                </div>
-                <ul>
-                    <li>
-                        <h3>Auto Bill Splitter (Flutter)</h3>
-                        <p><img src="images/Goldi1.png" alt="Goldi Bill Splitter" width="80" height="50">Goldi - Share
-                            bills fairly in seconds!</p>
-                    </li>
-                    <li>
-                        <h3>AI Researcher</h3>
-                        <p> <img src="images/Dminh research.png" alt="3D visualization in ChimeraX" width="80"
-                                height="50"> <a href="https://ccbatiit.github.io/">DMinh's Computational Chemical
-                                Biology Lab</a></p>
-                    </li>
-                    <li>
-                        <h3>POS System (Full-Stack)</h3>
-                        <p> <a href="https://github.com/tsrinarmwong/CS-425-POS-CL">View on Github</a></p>
-                    </li>
-                    <li>
-                        <h3>Inventory Management (AppSheet)</h3>
-                    </li>
-
-                </ul>
-            </section>
-
-            <div class="divider"></div>
-
-            <section class="right-section section">
-                <div class="project-overlay">
-                    <p>Music</p>
-                </div>
-                <ul>
-                    <li>
-                        <h3>Lead Rock Singer</h3>
-                        <p>Collaboration with local artists</p>
-                        <img src="music_project1.jpg" alt="Music Project 1 Image">
-                    </li>
-
-                    <li>
-                        <h3>Cover Songs</h3>
-                        <p> <a href="https://www.youtube.com/watch?v=ngcLo37XFTQ">Moon River</a> - Itimo Cover</p>
-                        <img src="music_project2.jpg" alt="Music Project 2 Image">
-                        <!-- Change this to the actual image source -->
-                    </li>
-
-                    <li>
-                        <h3>Classic vocal pieces</h3>
-                        <p> <a href="https://youtu.be/hpKSNP659ww?si=moE6igOTQ6__dDLC&t=13">Schubert: Die Faure</a> - at
-                            VanderCook College of Music</p>
-                        <img src="music_project3.jpg" alt="Music Project 3 Image">
-                        <!-- Change this to the actual image source -->
-                    </li>
-                </ul>
-            </section>
-        </div>
-    </section>
-    <section id="skills">
-        <h2>Skills and Interests</h2>
-        <div class="skills">
-            <h3>Technical Skills</h3>
-            <ul>
-                <li>Python, R, SQL, HTML, CSS, JavaScript, Flutter</li>
-                <li>Google Cloud Platform (GCP), BigQuery, AWS, Looker, PowerBI, Spreadsheets</li>
-            </ul>
-            <h3>Certifications</h3>
-            <ul>
-                <li>Google Data Analytics</li>
-                <li>Deep Learning Specialization</li>
-            </ul>
-        </div>
-        <div class="interests">
-            <h3>Languages</h3>
-            <ul>
-                <li>English - Fluent</li>
-                <li>Thai - Native</li>
-            </ul>
-            <h3>Other Interests</h3>
-            <ul>
-                <li>Singer and acoustic guitarist</li>
-                <li>Enjoys visiting grilled cheese restaurants</li>
-            </ul>
-        </div>
-    </section>
-    <footer id="contact">
-        <p>Phone: +1(312)631-5763</p>
-        <p>Email: tsrinarmwong.careers@gmail.com</p>
-        <p>&copy; 2024 Timo S - All rights reserved</p>
+        </section>
+        <section id="featured-project">
+            <h2>Featured Project: Ecocery</h2>
+            <img src="path/to/Ecocery.png" alt="Ecocery Project">
+            <p>One-stop solution to responsible grocery shopping.</p>
+        </section>
+        <section id="projects">
+            <h2>Other Projects</h2>
+            <!-- Thumbnails for other projects -->
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>Brief summary of your professional experience...</p>
+            <a href="experience.html">Read more</a>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <a href="mailto:email@example.com">Get in touch</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Timo Srinarmwong</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
