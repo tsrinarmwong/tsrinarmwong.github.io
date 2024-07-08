@@ -169,20 +169,15 @@ footer p {
     margin: 0;
 }
 
+/* Timeline container */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
 }
 
-.timeline-item {
-    margin: 20px 0;
-    position: relative;
-    width: 100%;
-}
-
-.timeline-item.left::after {
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -193,47 +188,93 @@ footer p {
     margin-left: -3px;
 }
 
-.timeline-item.right::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #2e7d32;
-    top: 0;
-    bottom: 0;
-    right: 50%;
-    margin-right: -3px;
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
 }
 
-.timeline-content {
-    padding: 20px;
-    background-color: #fff;
+/* The containers to the left */
+.container.left {
+    left: 0;
+}
+
+/* The containers to the right */
+.container.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container */
+.container.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #2e7d32;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #2e7d32;
+}
+
+/* Add arrows to the right container */
+.container.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #2e7d32;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #2e7d32 transparent transparent;
+}
+
+/* Fix the circle for each container */
+.container .content {
+    padding: 20px 30px;
+    background-color: white;
     position: relative;
     border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 45%;
 }
 
-.timeline-item.left .timeline-content {
-    float: left;
-    clear: both;
-}
-
-.timeline-item.right .timeline-content {
-    float: right;
-    clear: both;
-}
-
-.timeline-content h3,
-.timeline-content h4 {
+.container .content h3 {
     margin-top: 0;
 }
 
-.timeline-content p {
-    margin: 0;
-}
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
+
+    /* Make the timeline less thick */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 60px;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #2e7d32 transparent transparent;
+    }
+
+    /* Make sure all containers are full-width */
+    .container.right {
+        left: 0%;
+    }
+
     .hero-content h1 {
         font-size: 2em;
     }
