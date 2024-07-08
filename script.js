@@ -4,14 +4,6 @@
 var projectsSwiper = new Swiper('.projects-swiper', {
     slidesPerView: 1,
     spaceBetween: 10,
-    navigation: {
-        nextEl: '.projects-button-next',
-        prevEl: '.projects-button-prev',
-    },
-    pagination: {
-        el: '.projects-pagination',
-        clickable: true,
-    },
     breakpoints: {
         640: {
             slidesPerView: 2,

@@ -228,7 +228,7 @@ footer p {
     }
     
     #featured-project img {
-      max-width: 100%; /* Increase the max-width for mobile screens */
+      max-width: 125%; /* Increase the max-width for mobile screens */
     }
     
 
@@ -240,7 +240,7 @@ footer p {
     .project-video,
     .project-carousel {
         flex: 1 1 100%;
-        max-width: 100%;
+        max-width: 60%;
     }
 
     #experience,
