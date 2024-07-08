@@ -6,33 +6,33 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-  }
-  
-  header {
+}
+
+header {
     background-color: #ffffff;
     padding: 20px 0;
     border-bottom: 1px solid #eaeaea;
-  }
-  
-  nav {
+}
+
+nav {
     display: flex;
     justify-content: center;
     gap: 20px;
-  }
-  
-  nav a {
+}
+
+nav a {
     color: #333;
     text-decoration: none;
     padding: 10px 20px;
-  }
-  
-  nav a:hover {
+}
+
+nav a:hover {
     background-color: #eaeaea;
     border-radius: 5px;
-  }
-  
-  /* Hero section */
-  .hero {
+}
+
+/* Hero section */
+.hero {
     background: url('/images/IMG_8715.JPG') center/cover no-repeat;
     color: #fff;
     display: flex;
@@ -42,77 +42,75 @@ body {
     text-align: center;
     position: relative;
     background-blend-mode: overlay;
-    background-color: rgba(0, 128, 0, 0.5); /* Green overlay */
-  }
-  
-  .hero-content {
+    background-color: rgba(0, 128, 0, 0.5);
+    /* Green overlay */
+}
+
+.hero-content {
     z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adding text shadow for better readability */
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5em; /* Adjust font size as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Adding text shadow for better readability */
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    /* Adjust font size as needed */
     margin: 0;
-  }
-  
-  .hero-content p {
-    font-size: 1.2em; /* Adjust font size as needed */
-  }
-  
-  .hero-content .cta {
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    /* Adjust font size as needed */
+}
+
+.hero-content .cta {
     background-color: #2e7d32;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-  }
-  
-  .hero-content .cta:hover {
+}
+
+.hero-content .cta:hover {
     background-color: #256b28;
-  }
-  
-  /* Featured project section */
-  #featured-project {
+}
+
+/* Featured project section */
+#featured-project {
     padding: 40px 20px;
     background-color: #f5f5f5;
     text-align: center;
-  }
-  
-  #featured-project h2 {
+}
+
+#featured-project h2 {
     color: #2e7d32;
     margin-bottom: 20px;
-  }
-  
-  .project-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .project-video {
-    flex: 1 1 100%;
-  }
-  
-  /* Other projects section */
-  #projects {
+}
+
+#featured-project img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Other projects section */
+#projects {
     padding: 40px 20px;
     background-color: #f5f5f5;
     text-align: center;
-  }
-  
-  #projects h2 {
+}
+
+#projects h2 {
     color: #2e7d32;
     margin-bottom: 20px;
-  }
-  
-  .swiper-container {
+}
+
+.swiper-container {
     width: 100%;
     height: 100%;
-  }
-  
-  .swiper-slide {
+}
+
+.swiper-slide {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -121,16 +119,26 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-  }
-  
-  .swiper-slide img {
+}
+
+.swiper-slide img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
-  }
-  
-  .swiper-slide p {
+}
+
+.swiper-slide p {
     font-size: 1em;
     color: #555;
-  }
-  
+}
+
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eaeaea;
+}
+
+footer p {
+    margin: 0;
+}
