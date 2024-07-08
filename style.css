@@ -1,11 +1,10 @@
-/* style.css */
-
 /* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
+    overflow-x: hidden;
 }
 
 header {
@@ -100,7 +99,7 @@ nav a:hover {
 }
 
 #featured-project img {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     margin-bottom: 10px;
 }
@@ -144,15 +143,69 @@ nav a:hover {
     color: #555;
 }
 
-/* Experience and Contact sections */
-#experience,
+/* Experience section */
+#experience {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+#experience h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.experience-item {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.experience-image {
+    width: 100px;
+    /* Fixed size */
+    height: 100px;
+    /* Fixed size */
+    margin-right: 20px;
+    border-radius: 6px;
+    object-fit: cover;
+    /* Ensure the image covers the entire area without stretching */
+}
+
+.experience-content {
+    flex-grow: 1;
+}
+
+.experience-item h3 {
+    margin-top: 0;
+}
+
+.experience-item h4 {
+    margin: 0;
+    font-weight: normal;
+    color: #666;
+}
+
+/* Contact section */
 #contact {
     padding: 40px 20px;
     background-color: #f5f5f5;
     text-align: center;
 }
 
-#experience h2,
 #contact h2 {
     color: #2e7d32;
     margin-bottom: 20px;
@@ -169,118 +222,20 @@ footer p {
     margin: 0;
 }
 
-/* Timeline container */
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #2e7d32;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
-/* Container around content */
-.container {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
-
-/* The containers to the left */
-.container.left {
-    left: 0;
-}
-
-/* The containers to the right */
-.container.right {
-    left: 50%;
-}
-
-/* Add arrows to the left container */
-.container.left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid #2e7d32;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent #2e7d32;
-}
-
-/* Add arrows to the right container */
-.container.right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid #2e7d32;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent #2e7d32 transparent transparent;
-}
-
-/* Fix the circle for each container */
-.container .content {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-}
-
-.container .content h3 {
-    margin-top: 0;
-}
-
-
-
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-
-    /* Make the timeline less thick */
-    .timeline::after {
-        left: 31px;
-    }
-
-    /* Full-width containers */
-    .container {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-
-    /* Make sure that all arrows are pointing leftwards */
-    .container::before {
-        left: 60px;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #2e7d32 transparent transparent;
-    }
-
-    /* Make sure all containers are full-width */
-    .container.right {
-        left: 0%;
-    }
-
     .hero-content h1 {
         font-size: 2em;
     }
 
     .hero-content p {
         font-size: 1em;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
     .project-container {
@@ -294,34 +249,26 @@ footer p {
         max-width: 100%;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        padding: 10px 0;
-    }
-
     #experience,
     #contact {
         padding: 20px 10px;
     }
 
-    .timeline-item.left::after,
-    .timeline-item.right::after {
-        left: 20px;
+    .experience-container {
+        gap: 10px;
     }
 
-    .timeline-content {
-        margin-left: 40px;
-        max-width: 100%;
-        float: none;
-        clear: both;
+    .experience-item {
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .timeline-item.left .timeline-content,
-    .timeline-item.right .timeline-content {
-        float: none;
+    .experience-image {
+        width: 100px;
+        /* Maintain fixed size */
+        height: 100px;
+        /* Maintain fixed size */
+        margin: 0 0 10px 0;
     }
 }
