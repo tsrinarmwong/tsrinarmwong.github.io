@@ -32,12 +32,12 @@ nav a:hover {
 
 /* Hero section */
 .hero {
-    background: url('/images/IMG_8715.JPG') center/cover no-repeat;
+    background: url('/images/Thitipun_Srinarmwong_Background.JPG') center/cover no-repeat;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 75vh;
     text-align: center;
     position: relative;
     background-blend-mode: overlay;
