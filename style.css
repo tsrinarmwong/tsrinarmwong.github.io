@@ -101,7 +101,7 @@ nav a:hover {
 }
 
 #featured-project img {
-  max-width: 100%; /* Adjust the width percentage to make it larger */
+  max-width: 70%; /* Adjust the width percentage to make it larger */
   height: auto;
   margin-bottom: 10px;
 }
