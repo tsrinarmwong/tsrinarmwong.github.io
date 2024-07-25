@@ -87,6 +87,19 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
+#featured-project .featured-cta {
+    background-color: #FFA700;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#featured-project .featured-cta:hover {
+    background-color: #FFC700;
+}
+
 #featured-project img {
   max-width: 100%; /* Adjust the width percentage to make it larger */
   height: auto;
