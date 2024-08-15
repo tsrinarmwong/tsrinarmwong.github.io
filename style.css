@@ -129,7 +129,7 @@ nav a:hover {
 }
 
 .timeline-img {
-  width: 50px; /* Adjust the width as needed */
+  width: 90px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Ensures the image takes the full width */
   margin: 0 auto; /* Centers the image horizontally */  
@@ -326,7 +326,7 @@ footer p {
     }
     
     #featured-project img {
-      max-width: 80%; /* Increase the max-width for mobile screens */
+      max-width: 50%; /* Increase the max-width for mobile screens */
     }
     
 
@@ -519,7 +519,7 @@ footer p {
   @media screen and (max-width: 660px) {
   
   .timeline {
-       width: 100%;
+      width: 100%;
       padding: 4em 0 1em 0;
   }
   
