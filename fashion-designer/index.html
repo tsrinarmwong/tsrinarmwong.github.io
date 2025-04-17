@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUELLA AI Fashion Sketch Generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-black via-gray-800 to-red-900 text-white font-serif px-6 py-10">
+
+  <main class="w-full max-w-5xl mx-auto bg-white text-black rounded-3xl shadow-lg border-4 border-black p-8 space-y-8">
+    <h1 class="text-4xl font-bold text-center uppercase tracking-wide">CRUELLA AI Fashion Designer</h1>
+    <p class="text-center italic text-gray-600">I don't do cute. I do couture.</p>
+
+    <!-- Uploads Section -->
+    <section class="grid md:grid-cols-2 gap-8">
+      <!-- Model Upload -->
+      <div>
+        <h2 class="text-lg font-bold mb-2">Model Image (Pose)</h2>
+        <input id="modelUpload" type="file" accept="image/*" class="block mb-4 file:rounded file:border file:px-4 file:py-2 file:bg-black file:text-white hover:file:bg-red-700" />
+        <div id="modelPreview" class="bg-gray-100 rounded p-2 flex justify-center items-center min-h-[200px] overflow-hidden">
+          <span class="text-gray-400">No model image uploaded.</span>
+        </div>
+        <div id="poseOutput" class="mt-4 bg-white rounded p-2 flex justify-center items-center min-h-[200px] overflow-hidden">
+          <span class="text-gray-400">Pose output will appear here.</span>
+        </div>
+      </div>
+
+      <!-- Inspiration Upload -->
+      <div>
+        <h2 class="text-lg font-bold mb-2">Inspiration Moodboard</h2>
+        <input id="inspirationUpload" type="file" multiple accept="image/*" class="block mb-4 file:rounded file:border file:px-4 file:py-2 file:bg-black file:text-white hover:file:bg-red-700" />
+        <div id="inspirationPreview" class="grid grid-cols-2 sm:grid-cols-3 gap-2 bg-gray-100 p-2 rounded min-h-[200px]">
+          <span class="text-gray-400 col-span-full">No inspiration uploaded.</span>
+        </div>
+        <div class="mt-4">
+          <h3 class="font-semibold mb-1">📝 Captions (BLIP):</h3>
+          <pre id="captionOutput" class="bg-gray-100 rounded p-2 text-sm text-gray-800 whitespace-pre-wrap">Awaiting captions...</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="text-center space-x-4">
+      <button id="generateBtn" class="bg-black text-white px-6 py-3 font-bold rounded-full hover:bg-red-700 transition">
+        🧵 Generate Design
+      </button>
+      <button id="cancelBtn" class="bg-gray-300 text-black px-6 py-3 font-bold rounded-full hover:bg-gray-400 transition">
+        ✋ Stop
+      </button>
+      <div id="loadingIndicator" class="mt-4 text-sm text-gray-600 hidden">Processing...</div>
+      <div class="w-full bg-gray-300 rounded-full h-4 mt-4">
+        <div id="progressBar" class="bg-red-600 h-4 rounded-full transition-all duration-300 ease-in-out" style="width: 0%;"></div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section>
+      <h2 class="text-xl font-bold mb-2">🎨 Generated Output</h2>
+      <div id="results" class="bg-white p-4 rounded flex justify-center items-center min-h-[300px] overflow-hidden">
+        <span class="text-gray-400">No output yet.</span>
+      </div>
+    </section>
+
+    <!-- Debug -->
+    <section>
+      <h2 class="text-lg font-bold mb-2">Debug Log</h2>
+      <div id="debugOutput" class="bg-gray-100 text-sm text-gray-800 p-4 rounded space-y-1 max-h-[200px] overflow-y-auto"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
