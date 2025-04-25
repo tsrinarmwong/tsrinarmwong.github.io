@@ -4,15 +4,6 @@ import React from 'react';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
-      {/* Navbar */}
-      <header className="flex justify-between items-center px-6 py-4 shadow-md">
-        <div className="text-xl font-bold">TimoBuilds</div>
-        <nav className="space-x-4">
-          <a href="#services" className="hover:underline">Services</a>
-          <a href="#blog" className="hover:underline">Blog</a>
-          <a href="#contact" className="hover:underline">Contact</a>
-        </nav>
-      </header>
 
       {/* Hero */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-20 bg-green-50 dark:bg-green-900">
@@ -21,8 +12,8 @@ export default function Home() {
           I build powerful apps, creative AI tools, and scalable solutions for a better future.
         </p>
         <div className="space-x-4">
-          <a href="#services" className="px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition">View My Work</a>
-          <a href="#contact" className="px-6 py-3 border border-green-600 text-green-600 rounded-xl hover:bg-green-100 transition">Contact Me</a>
+          <a href="services" className="px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition">View My Work</a>
+          <a href="contact" className="px-6 py-3 border border-green-600 text-green-600 rounded-xl hover:bg-green-100 transition">Contact Me</a>
         </div>
       </section>
 
