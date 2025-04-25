@@ -2,6 +2,9 @@
 
 This proof-of-concept (PoC) demonstrates an AI-powered pipeline for generating fashion sketches or garments based on user-uploaded inspiration and model images. Built with Hugging Face tools, FastAPI, and a lightweight frontend.
 
+<img width="701" alt="image" src="https://github.com/user-attachments/assets/1bb9db9f-17b6-463a-a73e-1fe2f6d8cd79" />
+
+
 ---
 
 ## ✅ Goal
