@@ -1,0 +1,13 @@
+# Dependency folders
+node_modules
+node_modules/
+/node_modules
+dist/
+dist
+/dist
+
+# Environment files
+.env
+
+# MacOS files
+.DS_Store
