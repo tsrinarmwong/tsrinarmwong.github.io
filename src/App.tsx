@@ -5,8 +5,14 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import { useEffect } from 'react';
+import { initGoogleAnalytics } from './lib/analytics'; // adjust path if needed
 
 function App() {
+  useEffect(() => {
+    initGoogleAnalytics();
+  }, []);
+  
   return (
     <Router>
       {/* Navbar always stays at the top */}
