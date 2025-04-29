@@ -52,3 +52,29 @@ export default tseslint.config({
   },
 })
 ```
+
+
+/src
+  /components
+    /blog
+      BlogCard.tsx         → preview card for one article
+      BlogTeaser.tsx       → mini blog section on homepage
+      BlogPost.tsx         → reads + renders a .md article
+
+  /pages
+    Blog.tsx               → lists all BlogCards (blog homepage)
+    BlogPostPage.tsx       → loads single blog post via slug
+
+/public
+  /blogs
+    from-drama-to-data.md  → your actual article content
+    second-article.md
+
+
+/blog                         → Blog.tsx
+ └─ BlogCard: From Drama to Data
+      └─ link to /blog/from-drama-to-data
+
+/blog/from-drama-to-data      → BlogPostPage.tsx
+ └─ loads /blogs/from-drama-to-data.md
+      └─ rendered by BlogPost.tsx

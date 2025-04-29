@@ -1,14 +1,14 @@
-export default function Blog() {
-  return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white p-6">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl font-extrabold">From My Journal</h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">Weekly thoughts on tech, creativity, and freelancing ✍️</p>
-      </header>
+import BlogCard from '../components/blog/BlogCard';
+import blogs from '../components/blog/blogList';
 
-      <div className="text-center text-gray-500 dark:text-gray-400">
-        <p>Blog posts coming soon — stay tuned!</p>
-      </div>
-    </div>
+const BlogPage = () => {
+  return (
+    <main className="px-6 py-12 space-y-10 max-w-5xl mx-auto">
+      {blogs.map(blog => (
+        <BlogCard key={blog.slug} {...blog} />
+      ))}
+    </main>
   );
-}
+};
+
+export default BlogPage;

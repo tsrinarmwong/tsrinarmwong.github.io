@@ -12,10 +12,10 @@ function Home() {
     <main>
       <HeroSection />
       <TrustedBy />
-      <ShowcaseHighlight />
+      <BlogTeaser />
       <Services />
       <ImpactStrip />
-      <BlogTeaser />
+      {/* <ShowcaseHighlight /> */}
       <ContactCTA />
       <Footer />
     </main>
