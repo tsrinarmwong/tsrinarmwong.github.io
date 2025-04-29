@@ -1,6 +1,6 @@
 import HeroSection from '../components/hero/HeroSection';
 import TrustedBy from '../components/trust/TrustedBy';
-import ShowcaseHighlight from '../components/showcase/ShowcaseHighlight';
+// import ShowcaseHighlight from '../components/showcase/ShowcaseHighlight';
 import Services from '../components/services/Services';
 import ImpactStrip from '../components/impact/ImpactStrip';
 import BlogTeaser from '../components/blog/BlogTeaser';

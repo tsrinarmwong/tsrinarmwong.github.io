@@ -1,16 +1,36 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
+  const { pathname } = useLocation();
+
+  const navItems = [
+    { label: 'Services', to: '/services' },
+    { label: 'Blog', to: '/blog' },
+    { label: 'Contact', to: '/contact' },
+  ];
+
   return (
-    <header className="flex justify-between items-center px-6 py-4 shadow-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <div className="text-xl font-bold">
-        <Link to="/">TimoBuilds</Link>
-      </div>
-      <nav className="space-x-6">
-        <Link to="/services" className="hover:underline">Services</Link>
-        <Link to="/blog" className="hover:underline">Blog</Link>
-        <Link to="/contact" className="hover:underline">Contact</Link>
-      </nav>
-    </header>
+    <div className="fixed bottom-0 inset-x-0 z-50 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-700 md:static md:border-none">
+      <header className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto text-gray-900 dark:text-white">
+        <div className="text-lg font-semibold tracking-tight">
+          <Link to="/" className="hover:opacity-80 transition">
+            TimoBuilds
+          </Link>
+        </div>
+        <nav className="flex space-x-6 text-sm font-medium">
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={`hover:text-green-600 transition ${
+                pathname === item.to ? 'text-green-700 dark:text-green-400' : ''
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </header>
+    </div>
   );
 }

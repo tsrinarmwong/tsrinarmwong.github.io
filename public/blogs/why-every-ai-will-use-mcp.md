@@ -4,8 +4,6 @@ date: "April 2025"
 poster: "/images/why-every-ai-will-use-mcp.png"
 ---
 
-# Why Every AI Will Use MCP (Model Context Protocol)
-
 Hi smart people,
 
 Back in mid-April, I went to a Generative AI event hosted by Amazon, not expecting much.  
