@@ -1,13 +1,13 @@
 export default function Services() {
     return (
       <section className="px-6 py-16 bg-gray-50 dark:bg-gray-900">
-        <h2 className="text-3xl font-bold text-center mb-12">How I Can Help</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">AI Services & Expertise</h2>
         <div className="grid md:grid-cols-2 gap-10">
           {/* Service Cards */}
-          <ServiceCard title="MVP App Development" description="Mobile/web apps that ship fast and scale cleanly." />
-          <ServiceCard title="AI-Powered Tools" description="Generative AI and smart systems for creators and businesses." />
-          <ServiceCard title="Creative Tech / Gamified Ads" description="Interactive, playful experiences that engage and retain." />
-          <ServiceCard title="Idea Acceleration / Strategy" description="You bring the spark. I help build the fire." />
+          <ServiceCard title="Deep Learning Development" description="Custom neural networks, CNNs, RNNs, and advanced AI models for your specific use case." />
+          <ServiceCard title="Prompt Engineering & LLM Optimization" description="Expert prompt design and fine-tuning for optimal AI model performance and accuracy." />
+          <ServiceCard title="AI-Powered Applications" description="End-to-end AI solutions from drug discovery to creative AI and computer vision applications." />
+          <ServiceCard title="AI Strategy & Consulting" description="Strategic guidance on AI implementation, model selection, and technical architecture." />
         </div>
       </section>
     );

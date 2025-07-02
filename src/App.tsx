@@ -6,6 +6,7 @@ import Services from './pages/Services';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import BlogPostPage from './pages/BlogPostPage';
+import AIProjects from './pages/AIProjects';
 import { useEffect } from 'react';
 import { initGoogleAnalytics } from './lib/analytics'; // adjust path if needed
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/ai-projects" element={<AIProjects />} />
       </Routes>
     </Router>
   );
