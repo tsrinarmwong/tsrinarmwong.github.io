@@ -78,7 +78,7 @@ export default function AIAboutSection() {
                 Current Focus
               </h4>
               <p className="text-gray-600 leading-relaxed">
-                Currently working on advanced prompt engineering at OpenAI and Meta, 
+                Currently working on advanced prompt engineering at a leading AI research lab and Meta, 
                 specializing in Thai language processing and computer science education. 
                 My expertise spans from foundational neural networks to state-of-the-art 
                 diffusion models and generative AI applications.
@@ -125,7 +125,7 @@ export default function AIAboutSection() {
                 <div className="flex items-start space-x-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full mt-2"></div>
                   <div>
-                    <div className="font-semibold text-gray-900">OpenAI</div>
+                    <div className="font-semibold text-gray-900">Leading AI Research Lab</div>
                     <div className="text-sm text-gray-600">Prompt Engineering - CS Data Labeling</div>
                   </div>
                 </div>

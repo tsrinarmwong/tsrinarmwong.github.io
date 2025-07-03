@@ -11,21 +11,21 @@ interface AIProject {
 }
 
 const aiProjects: AIProject[] = [
-  {
-    year: 2025,
-    title: "Prompt Engineering at OpenAI",
-    description: "Advanced prompt engineering for computer science data labeling, contributing to model training and evaluation at OpenAI.",
-    technologies: ["Prompt Engineering", "CS Data", "Model Training", "OpenAI"],
-    impact: "Enhanced AI model training and evaluation",
-    image: "/images/openAI-Feather.webp"
-  },
+  // {
+  //   year: 2025,
+  //   title: "Prompt Engineering at OpenAI",
+  //   description: "Advanced prompt engineering for computer science data labeling, contributing to model training and evaluation at OpenAI.",
+  //   technologies: ["Prompt Engineering", "CS Data", "Model Training", "OpenAI"],
+  //   impact: "Enhanced AI model training and evaluation",
+  //   image: "/images/openAI-Feather.webp"
+  // },
   {
     year: 2025,
     title: "Prompt Engineering at Meta",
     description: "Specialized in prompt engineering for Thai language data labeling, optimizing AI model performance for Southeast Asian markets.",
     technologies: ["Prompt Engineering", "Thai NLP", "Data Labeling", "LLM Optimization"],
     impact: "Improved AI model performance for Thai language",
-    image: "/images/meta.webp"
+    image: "/images/meta_prompt_engineering.webp"
   },
   {
     year: 2025,
@@ -33,7 +33,7 @@ const aiProjects: AIProject[] = [
     description: "Built image-to-image generation system for fashion design, enabling AI-powered clothing and accessory creation.",
     technologies: ["Image-to-Image Generation", "Diffusion Models", "Fashion AI", "Computer Vision"],
     impact: "Revolutionizing fashion design with AI creativity",
-    image: undefined // Add image path here
+    image: "/images/fashion.webp"
   },
   {
     year: 2023,
@@ -41,7 +41,7 @@ const aiProjects: AIProject[] = [
     description: "Developed Variational Autoencoder (VAE) neural network for molecular generation and latent space perturbation in drug discovery applications.",
     technologies: ["VAE", "PyTorch", "Molecular Generation", "Latent Space", "Drug Discovery"],
     impact: "Advanced molecular design and drug discovery research",
-    image: undefined // Add image path here
+    image: "/images/VAE.gif"
   },
   {
     year: 2020,
@@ -49,7 +49,7 @@ const aiProjects: AIProject[] = [
     description: "Implemented NeuroEvolution of Augmenting Topologies (NEAT) algorithm to train AI agents to play Flappy Bird through reinforcement learning.",
     technologies: ["NEAT Algorithm", "Reinforcement Learning", "Python", "Game AI"],
     impact: "Demonstrated evolutionary algorithms and RL concepts",
-    image: undefined // Add image path here
+    image: "/images/ai_play_flappy_bird.gif"
   },
   {
     year: 2019,
@@ -57,7 +57,7 @@ const aiProjects: AIProject[] = [
     description: "Completed comprehensive deep learning course by DeepLearning.AI, covering neural networks, CNNs, RNNs, and practical applications.",
     technologies: ["TensorFlow", "Keras", "Python", "Neural Networks", "CNN", "RNN"],
     impact: "Foundation for all subsequent AI work",
-    image: undefined // Add image path here
+    image: "/images/deeplearning_cert.webp"
   }
 ];
 
@@ -96,42 +96,42 @@ export default function AIProjectsShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`relative flex items-center ${
+                className={`relative flex items-stretch ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 } flex-col gap-8`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-lg hidden md:block"></div>
                 
-                {/* Project image */}
-                <div className={`w-full md:w-1/2 flex justify-center items-center ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                {/* Project image - expanded */}
+                <div className={`w-full md:w-1/2 flex-shrink-0 flex justify-center items-stretch ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                   {project.image ? (
-                    (project.title.includes('OpenAI') || project.title.includes('Meta')) ? (
-                      <div className="w-40 h-40 md:w-56 md:h-56 flex items-center justify-center rounded-3xl shadow-lg border-4 border-white bg-gradient-to-br from-green-100 to-green-300">
+                    project.title.includes('Fashion Designer AI') ? (
+                      <a href="https://www.upwork.com/freelancers/~0125b5811d0c0a390d?p=1914697979918512128" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-24 h-24 md:w-36 md:h-36 object-contain rounded-2xl"
+                          className="w-full h-56 md:h-full object-cover rounded-3xl shadow-lg border-4 border-white hover:opacity-80 transition"
                         />
-                      </div>
+                      </a>
                     ) : (
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-3xl shadow-lg border-4 border-white bg-gray-100"
+                        className="w-full h-56 md:h-full object-cover rounded-3xl shadow-lg border-4 border-white"
                       />
                     )
                   ) : (
-                    <div className="w-40 h-40 md:w-56 md:h-56 flex items-center justify-center rounded-3xl shadow-lg border-4 border-white bg-gradient-to-br from-green-100 to-green-300 text-green-700 text-3xl font-bold">
+                    <div className="w-full h-56 md:h-full flex items-center justify-center rounded-3xl shadow-lg border-4 border-white bg-gradient-to-br from-green-100 to-green-300 text-green-700 text-3xl font-bold">
                       {project.title.split(' ').slice(0,2).join(' ')}
                     </div>
                   )}
                 </div>
 
                 {/* Project card */}
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-8' : 'md:pr-8'}`}>
+                <div className={`w-full md:w-1/2 flex flex-col justify-center ${index % 2 === 0 ? 'md:pl-8' : 'md:pr-8'}`}>
                   <div 
-                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100"
+                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 h-full flex flex-col justify-center"
                     onClick={() => setSelectedProject(project)}
                   >
                     <div className="flex items-center justify-between mb-4">
