@@ -10,7 +10,7 @@ export default function TrustedBy() {
       <div className="relative w-full md:w-auto">
         <div className="flex md:grid md:grid-cols-4 items-center gap-4 w-max md:w-full overflow-x-auto md:overflow-visible whitespace-nowrap md:whitespace-normal animate-marquee md:animate-none" style={{animationDuration: '18s'}}>
           {/* <img
-            src="/images/openAIexperience.webp"
+            src="/images/openAI-Feather.webp"
             alt="OpenAI"
             className="h-10 w-auto object-contain grayscale hover:grayscale-0 transition duration-200 mx-2 inline-block"
           /> */}
@@ -31,7 +31,7 @@ export default function TrustedBy() {
           />
           {/* Duplicate for seamless loop */}
           {/* <img
-            src="/images/openAIexperience.webp"
+            src="/images/openAI-Feather.webp"
             alt="OpenAI"
             className="h-10 w-auto object-contain grayscale hover:grayscale-0 transition duration-200 mx-2 inline-block md:hidden"
           /> */}

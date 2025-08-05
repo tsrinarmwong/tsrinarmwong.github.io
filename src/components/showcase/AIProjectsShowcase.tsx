@@ -17,7 +17,7 @@ const aiProjects: AIProject[] = [
   //   description: "Advanced prompt engineering for computer science data labeling, contributing to model training and evaluation at OpenAI.",
   //   technologies: ["Prompt Engineering", "CS Data", "Model Training", "OpenAI"],
   //   impact: "Enhanced AI model training and evaluation",
-  //   image: "/images/openAI-Feather.webp"
+  //   image: "/images/openAIexperience.webp"
   // },
   {
     year: 2025,
