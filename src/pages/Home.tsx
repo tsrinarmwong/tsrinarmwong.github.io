@@ -15,8 +15,8 @@ function Home() {
       <HeroSection />
       <TrustedBy />
       <AIAboutSection />
-      <AIProjectsShowcase />
       <AISkillsSection />
+      <AIProjectsShowcase />
       <Services />
       <ImpactStrip />
       <BlogTeaser />

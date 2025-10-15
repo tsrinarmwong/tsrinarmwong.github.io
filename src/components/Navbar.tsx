@@ -15,7 +15,8 @@ export default function Navbar() {
       <header className="flex justify-between items-center px-3 md:px-6 py-4 max-w-7xl mx-auto text-gray-900 dark:text-white w-full">
         <div className="text-lg font-semibold tracking-tight">
           <Link to="/" className="hover:opacity-80 transition">
-            Timo S.
+            Timo
+            AI
           </Link>
         </div>
         <nav className="flex space-x-6 text-sm font-medium overflow-x-auto whitespace-nowrap max-w-full">
