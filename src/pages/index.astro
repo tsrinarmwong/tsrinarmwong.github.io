@@ -1,0 +1,260 @@
+---
+import Base from '../layouts/Base.astro';
+
+// `art` tints each project's placeholder tile with a different corner of
+// the hero scene's palette; swap tiles for real images as they land.
+const work = [
+  {
+    slug: 'thai-llm-meta',
+    title: 'Fine-tuning Meta’s production LLM for Thai',
+    result: 'Human-rated output quality up ~84%',
+    meta: 'Meta · 2024–2025',
+    art: '--art-a: var(--pastel-rose); --art-b: var(--pastel-cream); --art-c: var(--pastel-lilac);',
+  },
+  {
+    slug: 'frontier-evals-mercor',
+    title: 'Evaluating frontier models across six domains',
+    result: 'Accuracy up 72% across iteration cycles',
+    meta: 'Three frontier labs, via Mercor · 2025–2026',
+    art: '--art-a: var(--pastel-sky); --art-b: var(--pastel-lilac); --art-c: var(--pastel-cream);',
+  },
+  {
+    slug: 'coding-agents-snorkel',
+    title: 'Training coding agents to reason end-to-end',
+    result: 'Flaky agent runs down ~30%',
+    meta: 'Snorkel AI · 2026',
+    art: '--art-a: var(--pastel-lilac); --art-b: var(--pastel-rose); --art-c: var(--pastel-sky);',
+  },
+  {
+    slug: 'goldi',
+    title: 'GOLDI: shipping and sunsetting a solo iOS app',
+    result: '15K downloads, zero paid acquisition, deliberate shutdown',
+    meta: 'Independent · 2024–2025',
+    art: '--art-a: var(--pastel-cream); --art-b: var(--pastel-sky); --art-c: var(--pastel-rose);',
+  },
+];
+---
+
+<Base
+  title="Timo Srinarmwong — Applied AI Engineer"
+  description="Applied AI engineer in New York. Evals, fine-tuning, RLHF and SFT data pipelines, and agents. Three years across Meta, Snorkel AI, and frontier-lab programs via Mercor."
+>
+  <section class="hero" slot="hero" aria-label="Interactive 3D introduction">
+    <div class="hero-canvas-wrap">
+      <canvas id="spline-canvas"></canvas>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h1>I make language models measurably better.</h1>
+    <p class="positioning">
+      Evals, fine-tuning, RLHF and SFT data pipelines, and agents. Three years
+      of applied work across Meta, Snorkel AI, and frontier-lab programs via
+      Mercor.
+    </p>
+    <p>
+      Most of my work is the unglamorous middle of AI: turning
+      &ldquo;make the model better&rdquo; into rubrics, datasets, and test
+      harnesses that hold up under adversarial prompts. I fine-tuned
+      Meta&rsquo;s production LLM for Thai, where I&rsquo;m a native speaker
+      and the evaluation could not hide from me. I also shipped a solo iOS app
+      to roughly 15,000 downloads, then shut it down eleven months later when
+      the retention data said to. I&rsquo;m in New York, and I read the numbers
+      before I trust the demo.
+    </p>
+  </section>
+
+  <section class="work" aria-labelledby="selected-work">
+    <h2 id="selected-work">Selected work</h2>
+    <ol class="work-list">
+      {
+        work.map((item, i) => (
+          <li>
+            <div class="frame tile">
+              <div class="art" style={item.art} />
+            </div>
+            <div>
+              <h3>
+                <a href={`/work/#${item.slug}`}>{item.title}</a>
+              </h3>
+              <p class="result">{item.result}</p>
+              <p class="meta">
+                {String(i + 1).padStart(2, '0')} · {item.meta}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>
+      The fastest way to reach me is email:
+      <a href="mailto:tsrinarmwong.careers@gmail.com">tsrinarmwong.careers@gmail.com</a>.
+      I&rsquo;m open to full-time applied AI roles in New York or remote.
+    </p>
+  </section>
+</Base>
+
+<script>
+  import { Application } from '@splinetool/runtime';
+
+  const canvas = document.getElementById('spline-canvas');
+  if (canvas instanceof HTMLCanvasElement) {
+    // The scene's camera keeps a fixed world-to-pixel scale, so narrow
+    // canvases crop the composition. Below the width where the full
+    // headline fits, render at the reference size and scale down.
+    const REF_W = 1280;
+    const REF_H = 848;
+    const hero = canvas.closest<HTMLElement>('.hero');
+    const wrap = canvas.parentElement;
+
+    function fitHero() {
+      if (!hero || !wrap) return;
+      const w = hero.clientWidth;
+      if (w < 1100) {
+        const s = w / REF_W;
+        wrap.style.width = `${REF_W}px`;
+        wrap.style.height = `${REF_H}px`;
+        wrap.style.transform = `scale(${s})`;
+        wrap.style.transformOrigin = 'top left';
+        hero.style.height = `${Math.round(REF_H * s)}px`;
+      } else {
+        wrap.style.width = '';
+        wrap.style.height = '';
+        wrap.style.transform = '';
+        hero.style.height = '';
+      }
+    }
+
+    fitHero();
+    window.addEventListener('resize', fitHero);
+
+    const app = new Application(canvas);
+    app
+      .load('https://prod.spline.design/oNDMBAPP-0HCa-Gd/scene.splinecode')
+      .then(() => {
+        hero?.classList.add('is-loaded');
+      });
+
+    // The scene's "SEE MY WORK" button scrolls to the work list.
+    app.addEventListener('mouseDown', (e) => {
+      if (e.target?.name && /work|button|cta|see/i.test(e.target.name)) {
+        document
+          .getElementById('selected-work')
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+</script>
+
+<style>
+  /* The scene's camera has a fixed vertical field of view, so the
+     visible width scales with the canvas aspect ratio. Keeping the
+     hero at 3:2 (capped by viewport height) guarantees the full
+     composition is visible at any screen width. */
+  .hero {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    max-height: min(88svh, 46rem);
+    overflow: hidden;
+  }
+
+  .hero-canvas-wrap {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 700ms ease;
+  }
+
+  .hero canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .hero.is-loaded .hero-canvas-wrap {
+    opacity: 1;
+  }
+
+  .intro {
+    padding-block: 5rem 0;
+  }
+
+  .positioning {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--ink-muted);
+    margin-block: 1.25rem 1.5rem;
+    max-width: 34rem;
+  }
+
+  .work {
+    margin-top: 5rem;
+  }
+
+  .work-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+
+  .work-list li {
+    display: flex;
+    gap: 1.5rem;
+    padding-block: 1.375rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .work-list li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .tile {
+    flex: 0 0 4.5rem;
+    align-self: flex-start;
+  }
+
+  .tile .art {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  @media (max-width: 480px) {
+    .tile {
+      flex-basis: 3.25rem;
+    }
+  }
+
+  .work-list h3 {
+    font-size: var(--text-lg);
+  }
+
+  .work-list h3 a {
+    text-decoration: none;
+  }
+
+  .work-list h3 a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+  }
+
+  .result {
+    font-size: var(--text-sm);
+    color: var(--ink);
+    margin-block: 0.25rem;
+  }
+
+  .contact {
+    margin-top: 5rem;
+  }
+
+  .contact p {
+    margin-top: 1rem;
+  }
+</style>
