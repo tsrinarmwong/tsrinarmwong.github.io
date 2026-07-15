@@ -2,23 +2,31 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base
-  title="404 — Timo Srinarmwong"
-  description="This page does not exist."
->
-  <section class="notfound">
-    <p class="meta">404</p>
+<Base title="404 — Timo Srinarmwong" description="This page does not exist.">
+  <main id="main" class="section notfound">
+    <p class="eyebrow">404</p>
     <h1>This page failed its eval.</h1>
-    <p><a href="/">Back to the home page</a>.</p>
-  </section>
+    <a class="pill pill--primary" href="/">BACK TO THE HOME PAGE</a>
+  </main>
 </Base>
 
 <style>
   .notfound {
-    padding-block: 6rem 0;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    padding-bottom: var(--section-gap);
   }
 
-  .notfound h1 {
-    margin-block: 0.75rem 1.25rem;
+  h1 {
+    font-weight: 850;
+    font-stretch: 108%;
+    font-size: clamp(40px, 5.2vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
   }
 </style>

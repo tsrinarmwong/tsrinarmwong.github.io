@@ -1,0 +1,237 @@
+---
+const stats = [
+  { value: '~84%', caption: 'human-rated quality gain, Meta Thai LLM' },
+  { value: '6', caption: 'eval domains across frontier-lab programs' },
+  { value: '50+', caption: 'verified agent-training task solutions' },
+  { value: '15K', caption: 'downloads of GOLDI, my solo-shipped iOS app' },
+];
+---
+
+<header class="hero">
+  <nav aria-label="Primary">
+    <span class="brand">TIMO S.</span>
+    <div class="nav-links">
+      <a class="nav-link" href="#work">WORK</a>
+      <a class="nav-link" href="#about">ABOUT</a>
+      <a class="nav-link" href="#contact">CONTACT</a>
+      <a class="pill pill--primary pill--nav" href="https://calendly.com/thitipun-snw/30min" target="_blank" rel="noopener">GRAB MY TIME</a>
+    </div>
+  </nav>
+
+  <div class="hero-inner">
+    <p class="eyebrow" data-reveal="0">APPLIED AI ENGINEER — NEW YORK</p>
+    <h1 data-reveal="1">
+      <span class="h1-solid">Timo</span>
+      <span class="h1-outline">Srinarmwong</span>
+    </h1>
+    <div class="hero-row" data-reveal="2">
+      <p class="lede">
+        I make frontier models measurably better — fine-tuning, evaluation
+        frameworks, and agent pipelines for Meta, Snorkel AI, and three
+        frontier research labs.
+      </p>
+      <div class="hero-ctas">
+        <a class="pill pill--primary" href="#work">SEE THE WORK ↓</a>
+        <a class="pill pill--outline" href="/assets/Timo_Srinarmwong_Resume.pdf">RESUME (PDF)</a>
+      </div>
+    </div>
+    <div class="stats" data-reveal="3">
+      {
+        stats.map((s) => (
+          <div class="stat">
+            <div class="stat-value">{s.value}</div>
+            <div class="stat-caption">{s.caption}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="proof-strip">
+    <p>META&nbsp;&nbsp;·&nbsp;&nbsp;SNORKEL AI&nbsp;&nbsp;·&nbsp;&nbsp;MERCOR&nbsp;&nbsp;·&nbsp;&nbsp;3 FRONTIER RESEARCH LABS</p>
+  </div>
+</header>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(48% 60% at 88% -10%, rgb(var(--rust-rgb) / 0.16), transparent 65%),
+      var(--bg);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 30px var(--pad-x) 0;
+  }
+
+  .brand {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    color: var(--ink);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.4vw, 28px);
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    color: rgb(var(--ink-rgb) / 0.66);
+    text-decoration: none;
+    padding: 12px 0;
+    transition: color 160ms ease;
+  }
+
+  .nav-link:hover {
+    color: var(--copper-light);
+  }
+
+  .pill--nav {
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    padding: 11px 20px;
+  }
+
+  .pill--nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgb(var(--rust-rgb) / 0.35);
+  }
+
+  .hero-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: clamp(56px, 8vh, 84px) var(--pad-x) 72px;
+  }
+
+  h1 {
+    font-weight: 850;
+    font-stretch: 106%;
+    font-size: clamp(56px, 9.4vw, 118px);
+    line-height: 0.88;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    margin-top: 26px;
+  }
+
+  .h1-solid {
+    display: block;
+    color: var(--ink);
+  }
+
+  .h1-outline {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--copper);
+  }
+
+  .hero-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px 48px;
+    margin-top: 44px;
+  }
+
+  .lede {
+    font-size: clamp(17px, 1.8vw, 21px);
+    line-height: 1.55;
+    color: rgb(var(--ink-rgb) / 0.82);
+    max-width: 52ch;
+    font-weight: 450;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    flex: 0 0 auto;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 28px;
+    margin-top: clamp(48px, 7vh, 72px);
+  }
+
+  .stat {
+    border-top: 1px solid rgb(var(--ink-rgb) / 0.16);
+    padding-top: 18px;
+    transition: border-color 200ms ease;
+  }
+
+  .stat:hover {
+    border-color: var(--rust);
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: -0.01em;
+    color: var(--copper-light);
+  }
+
+  .stat-caption {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: rgb(var(--ink-rgb) / 0.58);
+    margin-top: 8px;
+  }
+
+  .proof-strip {
+    border-top: 1px solid rgb(var(--ink-rgb) / 0.1);
+    padding: 20px var(--pad-x);
+    text-align: center;
+  }
+
+  .proof-strip p {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: rgb(var(--ink-rgb) / 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .nav-link {
+      display: none;
+    }
+  }
+
+  /* Below ~480px the clamp() floor (56px) no longer fits "SRINARMWONG"
+     inside the side padding; track the viewport instead. */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: clamp(30px, 10vw, 56px);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero-ctas {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-ctas .pill {
+      justify-content: center;
+    }
+  }
+</style>

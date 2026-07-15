@@ -1,13 +1,21 @@
-# Dependency folders
-node_modules
+# Dependencies
 node_modules/
-/node_modules
+
+# Build output
 dist/
-dist
-/dist
+
+# Astro generated types/cache
+.astro/
 
 # Environment files
 .env
+.env.*
 
-# MacOS files
+# Logs
+npm-debug.log*
+
+# macOS
 .DS_Store
+
+# Local design reference bundle (prototype handoff, not site source)
+design_handoff_portfolio/

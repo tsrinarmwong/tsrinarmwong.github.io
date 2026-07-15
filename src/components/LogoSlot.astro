@@ -1,0 +1,68 @@
+---
+// Slot for workplace logos / app icons. With an `image`, renders the
+// logo contained on a white tile (colored marks don't sit well directly
+// on the dark background); without one, a lettered placeholder.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  size: number;
+  radius: number;
+  initial: string;
+  image?: ImageMetadata;
+  alt?: string;
+}
+
+const { size, radius, initial, image, alt = '' } = Astro.props;
+---
+
+{
+  image ? (
+    <Image
+      class="logo-slot logo-slot--tile"
+      src={image}
+      alt={alt}
+      width={size}
+      height={size}
+      densities={[1, 2]}
+      style={`--slot-size: ${size}px; --slot-radius: ${radius}px;`}
+    />
+  ) : (
+    <span
+      class="logo-slot logo-slot--empty"
+      aria-hidden="true"
+      style={`--slot-size: ${size}px; --slot-radius: ${radius}px;`}
+    >
+      {initial}
+    </span>
+  )
+}
+
+<style>
+  .logo-slot {
+    width: var(--slot-size);
+    height: var(--slot-size);
+    flex: 0 0 auto;
+    border-radius: var(--slot-radius);
+    object-fit: contain;
+  }
+
+  .logo-slot--tile {
+    display: block;
+    background: #fff;
+    padding: 9px;
+  }
+
+  .logo-slot--empty {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(var(--ink-rgb) / 0.06);
+    border: 1px solid rgb(var(--ink-rgb) / 0.12);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: rgb(var(--ink-rgb) / 0.4);
+  }
+</style>

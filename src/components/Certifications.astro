@@ -1,0 +1,102 @@
+---
+const certs = [
+  { name: 'OpenAI Applied AI', issuer: 'OPENAI', year: '2026' },
+  { name: 'Google Data Analytics Specialization', issuer: 'GOOGLE @ COURSERA', year: '2021' },
+  { name: 'Deep Learning Specialization', issuer: 'DEEPLEARNING.AI @ COURSERA', year: '2021' },
+];
+---
+
+<section id="certifications" class="section">
+  <div class="cert-grid" data-reveal="0">
+    <h2>Certifications</h2>
+    <div>
+      {
+        certs.map((c) => (
+          <div class="cert-row">
+            <span class="cert-name">{c.name}</span>
+            <span class="cert-issuer">{c.issuer}</span>
+            <span class="cert-year">{c.year}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .cert-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: clamp(32px, 4.5vw, 56px);
+    align-items: start;
+  }
+
+  h2 {
+    font-weight: 850;
+    font-stretch: 108%;
+    font-size: clamp(30px, 3.4vw, 40px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    border-top: 1px solid rgb(var(--ink-rgb) / 0.14);
+    padding: 18px 4px;
+    transition:
+      background 180ms ease,
+      padding-left 180ms ease;
+  }
+
+  .cert-row:last-child {
+    border-bottom: 1px solid rgb(var(--ink-rgb) / 0.14);
+  }
+
+  .cert-row:hover {
+    background: rgb(var(--rust-rgb) / 0.07);
+    padding-left: 14px;
+  }
+
+  .cert-name {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .cert-issuer {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgb(var(--ink-rgb) / 0.5);
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .cert-year {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--copper-light);
+  }
+
+  @media (max-width: 820px) {
+    .cert-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .cert-row {
+      flex-wrap: wrap;
+      row-gap: 4px;
+    }
+
+    .cert-name {
+      flex: 1 0 100%;
+    }
+  }
+</style>

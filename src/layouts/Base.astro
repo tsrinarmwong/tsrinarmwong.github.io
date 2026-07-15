@@ -1,9 +1,7 @@
 ---
-import '@fontsource-variable/newsreader';
-import '@fontsource-variable/newsreader/wght-italic.css';
-import '@fontsource-variable/inter';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource-variable/archivo/wdth-italic.css';
+import '@fontsource-variable/jetbrains-mono';
 import '../styles/global.css';
 
 interface Props {
@@ -13,16 +11,6 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const path = Astro.url.pathname;
-
-// Pages with a hero (home) use the scene itself as the masthead:
-// no header above it, straight into the scene.
-const hasHero = Astro.slots.has('hero');
-
-const lastUpdated = new Date().toLocaleDateString('en-US', {
-  month: 'long',
-  year: 'numeric',
-});
 ---
 
 <!doctype html>
@@ -35,11 +23,11 @@ const lastUpdated = new Date().toLocaleDateString('en-US', {
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#1a1a1a" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <!-- TODO: generated typographic OG image (phase 2) -->
     {
       import.meta.env.PROD && (
         <script
@@ -59,117 +47,6 @@ const lastUpdated = new Date().toLocaleDateString('en-US', {
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-
-    {
-      !hasHero && (
-        <header class="site-header">
-          <div class="theme-ribbon" aria-hidden="true" />
-          <div class="page header-inner">
-            <a href="/" class="wordmark">Timo Srinarmwong</a>
-            <nav aria-label="Site">
-              <a href="/work/" aria-current={path.startsWith('/work') ? 'page' : undefined}>Work</a>
-              <a href="/about/" aria-current={path.startsWith('/about') ? 'page' : undefined}>About</a>
-            </nav>
-          </div>
-        </header>
-      )
-    }
-
-    <slot name="hero" />
-
-    <main id="main" class="page">
-      <slot />
-    </main>
-
-    <footer class="site-footer">
-      <div class="page footer-inner">
-        <nav class="meta footer-links" aria-label="Site, footer">
-          <a href="/">Home</a>
-          <a href="/work/">Work</a>
-          <a href="/about/">About</a>
-        </nav>
-        <div class="meta footer-links">
-          <a href="mailto:tsrinarmwong.careers@gmail.com">tsrinarmwong.careers@gmail.com</a>
-          <a href="https://linkedin.com/in/thitipun-s">LinkedIn</a>
-          <!-- TODO: real GitHub profile URL -->
-          <a href="https://github.com/tsrinarmwong">GitHub</a>
-        </div>
-        <p class="meta">Last updated {lastUpdated} · New York, NY</p>
-      </div>
-    </footer>
+    <slot />
   </body>
 </html>
-
-<style>
-  .theme-ribbon {
-    height: 3px;
-    background: linear-gradient(
-      90deg,
-      var(--pastel-sky),
-      var(--pastel-lilac),
-      var(--pastel-rose),
-      var(--pastel-cream)
-    );
-  }
-
-  .header-inner {
-    padding-top: 1.625rem;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    flex: initial;
-  }
-
-  .wordmark {
-    font-family: var(--font-serif);
-    font-size: var(--text-lg);
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .wordmark:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 0.2em;
-  }
-
-  nav {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  nav a {
-    font-size: var(--text-sm);
-    text-decoration: none;
-  }
-
-  nav a:hover,
-  nav a[aria-current='page'] {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-  }
-
-  .site-footer {
-    border-top: 1px solid var(--rule);
-    margin-top: 6rem;
-    padding-block: 1.5rem 2rem;
-  }
-
-  .footer-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex: initial;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .footer-links a {
-    color: var(--ink-muted);
-  }
-</style>
